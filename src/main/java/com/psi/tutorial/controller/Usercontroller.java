@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
-
 @Controller
 //해당 클래스는 컨트롤러야
 public class Usercontroller {
@@ -18,6 +16,19 @@ public class Usercontroller {
     @ResponseBody
     public String showHome(){
         return "안녕하세요";
+    }
+
+    @GetMapping("/home/main2")
+    //대상이 /home/main 요청을 보내면 아래 메서드 실행
+    @ResponseBody
+    public String showHome2(){
+        return "반갑습니다";
+    }
+    @GetMapping("/home/main3")
+    //대상이 /home/main 요청을 보내면 아래 메서드 실행
+    @ResponseBody
+    public String showHome3(){
+        return "스프링부트 최공";
     }
 
     @PostMapping("/api/user")
