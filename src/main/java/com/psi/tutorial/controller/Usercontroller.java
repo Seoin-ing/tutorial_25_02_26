@@ -1,19 +1,23 @@
 package com.psi.tutorial.controller;
 
 import com.psi.tutorial.dto.UserDTO;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-@RestController
+@Controller
+//해당 클래스는 컨트롤러야
 public class Usercontroller {
 
-    @GetMapping("/api/users")
-    public List<String> getUsers(){
-        return List.of("권민재", "류현준", "김준영");
+    @GetMapping("/home/main")
+    //대상이 /home/main 요청을 보내면 아래 메서드 실행
+    @ResponseBody
+    public String showHome(){
+        return "안녕하세요";
     }
 
     @PostMapping("/api/user")
